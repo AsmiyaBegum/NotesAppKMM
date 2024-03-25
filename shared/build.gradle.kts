@@ -44,16 +44,18 @@ kotlin {
             implementation(libs.native.driver)
         }
     }
+
+    task("testClasses")
 }
 
 sqldelight {
     databases {
-        create("NoteDatabase") {
-            packageName.set("com.ab.notesappkmm.database")
-            srcDirs.setFrom("src/main/sqldelight")
+        create("NotesDatabase") {
+            packageName.set("com.ab.notesappkmm.db")
         }
     }
 }
+
 
 android {
     namespace = "com.ab.notesappkmm"
