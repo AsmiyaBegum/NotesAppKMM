@@ -1,12 +1,28 @@
 [versions]
 agp = "8.2.1"
+desugar_jdk_libs = "1.1.5"
+gradle = "7.2.2"
+hiltAndroid = "2.42"
+hiltCompiler = "1.0.0"
 kotlin = "1.9.20"
 compose = "1.5.4"
 compose-compiler = "1.5.4"
 compose-material3 = "1.1.2"
 androidx-activityCompose = "1.8.0"
+kotlinGradlePlugin = "1.7.10"
+kotlinxDatetime = "0.4.0"
+runtime = "2.0.1"
 
 [libraries]
+android-driver = { module = "app.cash.sqldelight:android-driver", version.ref = "runtime" }
+androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompiler" }
+desugar_jdk_libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar_jdk_libs" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
+hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
+hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroid" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
@@ -14,6 +30,9 @@ compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = 
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 compose-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "compose" }
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
+native-driver = { module = "app.cash.sqldelight:native-driver", version.ref = "runtime" }
+runtime = { module = "app.cash.sqldelight:runtime", version.ref = "runtime" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

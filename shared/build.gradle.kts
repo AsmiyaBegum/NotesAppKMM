@@ -27,8 +27,8 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-                implementation("app.cash.sqldelight:runtime:1.5.3")
-                implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
+                implementation(libs.runtime)
+                implementation(libs.kotlinx.datetime)
 
             //put your multiplatform dependencies here
         }
@@ -37,11 +37,11 @@ kotlin {
         }
 
         androidMain.dependencies {
-            implementation("app.cash.sqldelight:android-driver:2.0.1")
+            implementation(libs.android.driver)
         }
 
         iosMain.dependencies {
-            implementation("app.cash.sqldelight:native-driver:2.0.1")
+            implementation(libs.native.driver)
         }
     }
 }
