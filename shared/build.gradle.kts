@@ -26,22 +26,51 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
+        val commonMain by getting {
+            dependencies {
                 implementation(libs.runtime)
                 implementation(libs.kotlinx.datetime)
+            }
+
 
             //put your multiplatform dependencies here
         }
-        commonTest.dependencies {
-            implementation(libs.kotlin.test)
+        val commonTest by getting {
+            dependencies {
+                implementation(libs.kotlin.test)
+            }
         }
 
-        androidMain.dependencies {
-            implementation(libs.android.driver)
+        val androidMain by getting {
+            dependencies {
+                implementation(libs.android.driver)
+            }
         }
 
-        iosMain.dependencies {
-            implementation(libs.native.driver)
+        val iosMain by creating {
+            dependencies {
+                implementation(libs.native.driver)
+            }
+
+//        val androidTest by getting
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosSimulatorArm64Main by getting
+
+
+            dependsOn(commonMain)
+            iosX64Main.dependsOn(this)
+            iosArm64Main.dependsOn(this)
+            iosSimulatorArm64Main.dependsOn(this)
+        }
+        val iosX64Test by getting
+        val iosArm64Test by getting
+        val iosSimulatorArm64Test by getting
+        val iosTest by creating {
+            dependsOn(commonTest)
+            iosX64Test.dependsOn(this)
+            iosArm64Test.dependsOn(this)
+            iosSimulatorArm64Test.dependsOn(this)
         }
     }
 
