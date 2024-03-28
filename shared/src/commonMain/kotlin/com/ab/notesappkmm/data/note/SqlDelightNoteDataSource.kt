@@ -1,4 +1,4 @@
-package com.ab.notesappkmm.data.note1
+package com.ab.notesappkmm.data.note
 
 import com.ab.notesappkmm.DateTimeUtil
 import com.ab.notesappkmm.db.NotesDatabase
