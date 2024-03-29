@@ -29,7 +29,7 @@ fun HideableSearchTextField(
     modifier: Modifier = Modifier
 ){
     Box(
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     ) {
         AnimatedVisibility(
             visible = isSearchActive,
@@ -58,7 +58,7 @@ fun HideableSearchTextField(
             modifier = Modifier.align(Alignment.CenterEnd)
         ) {
             
-          IconButton(onClick = { onCloseClick }) {
+          IconButton(onClick = onCloseClick ) {
               Icon(
                   imageVector = Icons.Default.Close,
                   contentDescription = "Close Search"
@@ -75,7 +75,7 @@ fun HideableSearchTextField(
             modifier = Modifier.align(Alignment.CenterEnd)
         ) {
 
-            IconButton(onClick = { onSearchClick }) {
+            IconButton(onClick =  onSearchClick ) {
                 Icon(
                     imageVector = Icons.Default.Search,
                     contentDescription = "Open Search"

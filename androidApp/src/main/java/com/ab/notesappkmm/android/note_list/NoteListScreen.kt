@@ -70,8 +70,8 @@ fun NoteListScreen(viewModel: NoteListViewModel = hiltViewModel()) {
                     text = state.searchText,
                     isSearchActive = state.isSearchActive,
                     onTextChange = viewModel::onSearchTextChanges,
-                    onSearchClick = { viewModel::onToggleSearch },
-                    onCloseClick = { viewModel::onToggleSearch },
+                    onSearchClick =  viewModel::onToggleSearch ,
+                    onCloseClick =  viewModel::onToggleSearch ,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(90.dp)
