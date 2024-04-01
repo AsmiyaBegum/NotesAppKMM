@@ -49,7 +49,7 @@ kotlin {
 
         val iosMain by creating {
             dependencies {
-                implementation(libs.native.driver)
+                implementation("app.cash.sqldelight:native-driver:2.0.1")
             }
 
 //        val androidTest by getting
@@ -82,6 +82,7 @@ sqldelight {
         create("NotesDatabase") {
             packageName.set("com.ab.notesappkmm.db")
         }
+        linkSqlite = true
     }
 }
 

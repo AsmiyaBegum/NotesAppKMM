@@ -21,7 +21,7 @@ extension NoteListScreen {
         
         @Published private(set) var filteredNotes = [Note]()
         
-        @Published private(set) var searchText = "" {
+        @Published var searchText = "" {
             didSet {
                 self.filteredNotes = searchNotes.execute(notes: self.notes, query:searchText)
             }
@@ -29,7 +29,7 @@ extension NoteListScreen {
         
         @Published private(set) var isSearchActive = false
         
-        init(noteDataSource : NoteDataSource){
+        init(noteDataSource : NoteDataSource?=nil){
             self.noteDataSource = noteDataSource
         }
         

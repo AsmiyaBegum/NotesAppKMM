@@ -12,7 +12,7 @@ import shared
 struct NoteListScreen: View {
     
     private var noteDataSource : NoteDataSource
-    @StateObject var viewModel = NoteListViewModel(noteDataSource: nil)
+    @StateObject var viewModel = NoteListViewModel(noteDataSource : nil)
 
     @State private var isNoteSelected : Bool = false
     @State private var selectedNoteId : Int64? = nil
@@ -30,9 +30,9 @@ struct NoteListScreen: View {
                     EmptyView()
                 }.hidden()
                 
-                HideableSearchTextField(onSearchToggled: viewModel.toggleSearchActive(), destinationProvider: {
-                    EmptyView()
-                }, isSearchActive: viewModel.isSearchActive, searchText: $viewModel.searchText)
+                HideableSearchTextField<NoteDetailScreen>(onSearchToggled: {viewModel.toggleSearchActive()}, destinationProvider: {
+                    NoteDetailScreen(noteDataSource: noteDataSource,noteId: selectedNoteId)
+                }, isSearchActive: viewModel.isSearchActive , searchText: $viewModel.searchText)
                 .frame(maxWidth: .infinity, minHeight: 40)
                 .padding()
                 
@@ -42,18 +42,18 @@ struct NoteListScreen: View {
                 }
             }
             
-            List(ForEach(viewModel.filteredNotes, id : \.self.id){ note in
-                
-                Button(action : {
-                    isNoteSelected = true
-                    selectedNoteId = note.id?.int64Value
-                }){
-                    NoteItem(note: note, onDeleteClick: {
-                        viewModel.deleteNoteById(id: note.id?.int64Value)
-                    })
+            List {
+                ForEach(viewModel.filteredNotes, id: \.self.id) { note in
+                    Button(action: {
+                        isNoteSelected = true
+                        selectedNoteId = note.id?.int64Value
+                    }) {
+                        NoteItem(note: note, onDeleteClick: {
+                            viewModel.deleteNoteById(id: note.id?.int64Value)
+                        })
+                    }
                 }
-                
-            }).onAppear{
+            }.onAppear{
                 viewModel.loadNotes()
             }.listStyle(.plain)
                 .listRowSeparator(.hidden)
