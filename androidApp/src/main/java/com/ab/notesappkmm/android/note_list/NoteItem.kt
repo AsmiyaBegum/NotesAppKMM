@@ -43,11 +43,10 @@ fun NoteItem(
 
     Column(
         modifier = modifier
-            .fillMaxWidth()
-            .clip(RoundedCornerShape(16.dp))
-            .padding(16.dp)
+            .clip(RoundedCornerShape(5.dp))
             .background(backgroundColor)
-            .clickable { onNoteClick }
+            .padding(16.dp)
+            .clickable { onNoteClick() }
     ) {
 
         Row(
@@ -66,7 +65,7 @@ fun NoteItem(
                 imageVector = Icons.Default.Close,
                 contentDescription = "Delete note",
                 modifier = Modifier.clickable(MutableInteractionSource(),null) {
-                    onDeleteClick
+                    onDeleteClick()
                 })
 
         }
@@ -75,7 +74,8 @@ fun NoteItem(
 
         Text(
             text = note.content,
-            fontWeight = FontWeight.Light
+            fontWeight = FontWeight.Light,
+            maxLines = 4
         )
 
         Spacer(modifier = Modifier.height(16.dp))

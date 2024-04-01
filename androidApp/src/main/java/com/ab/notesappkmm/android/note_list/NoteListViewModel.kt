@@ -28,7 +28,7 @@ class NoteListViewModel  @Inject constructor(
     val state = combine(notes, searchText, isSearchActive){ notes, searchText, isSearchActive ->
 
         NoteListState(
-            notes = notes,
+            notes = searchNotes.execute(notes,searchText),
             searchText = searchText,
             isSearchActive = isSearchActive
         )

@@ -1,5 +1,6 @@
 package com.ab.notesappkmm.android.note_detail
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,7 +41,9 @@ fun NoteDetailScreen(
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { viewModel::saveNote },
+                onClick = {
+                    viewModel.saveNote()
+                          },
                 containerColor = Color.Black
             ) {
                 
@@ -54,8 +57,10 @@ fun NoteDetailScreen(
 
         Column(
             modifier = Modifier
+                .background(Color(state.noteColor))
                 .fillMaxSize()
                 .padding(paddingValues)
+                .padding(16.dp)
         ) {
 
             TransparentHintTextField(
