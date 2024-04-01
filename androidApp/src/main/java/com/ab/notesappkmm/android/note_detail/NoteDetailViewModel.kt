@@ -71,7 +71,7 @@ class NoteDetailViewModel @Inject constructor(
     }
 
 
-    fun onNoteTitleChaned(title : String){
+    fun onNoteTitleChanged(title : String){
         savedStateHandle["noteTitle"] = title
     }
 
