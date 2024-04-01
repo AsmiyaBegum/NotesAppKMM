@@ -12,6 +12,10 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		237C87B32BBA8A1800ECA9A6 /* NoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237C87B22BBA8A1800ECA9A6 /* NoteListViewModel.swift */; };
 		237C87B52BBA8A7000ECA9A6 /* NoteListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237C87B42BBA8A7000ECA9A6 /* NoteListScreen.swift */; };
+		237C87B72BBA9C6F00ECA9A6 /* HideableSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237C87B62BBA9C6F00ECA9A6 /* HideableSearchTextField.swift */; };
+		237C87B92BBAA32400ECA9A6 /* NoteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237C87B82BBAA32400ECA9A6 /* NoteItem.swift */; };
+		237C87BB2BBAA93900ECA9A6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237C87BA2BBAA93900ECA9A6 /* Colors.swift */; };
+		237C87BE2BBACCB300ECA9A6 /* NoteDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237C87BD2BBACCB300ECA9A6 /* NoteDetailScreen.swift */; };
 		7555FF83242A565900829871 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +38,10 @@
 		2152FB032600AC8F00CF470E /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		237C87B22BBA8A1800ECA9A6 /* NoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewModel.swift; sourceTree = "<group>"; };
 		237C87B42BBA8A7000ECA9A6 /* NoteListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListScreen.swift; sourceTree = "<group>"; };
+		237C87B62BBA9C6F00ECA9A6 /* HideableSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideableSearchTextField.swift; sourceTree = "<group>"; };
+		237C87B82BBAA32400ECA9A6 /* NoteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteItem.swift; sourceTree = "<group>"; };
+		237C87BA2BBAA93900ECA9A6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		237C87BD2BBACCB300ECA9A6 /* NoteDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailScreen.swift; sourceTree = "<group>"; };
 		7555FF7B242A565900829871 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7555FF82242A565900829871 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -63,8 +71,18 @@
 			children = (
 				237C87B22BBA8A1800ECA9A6 /* NoteListViewModel.swift */,
 				237C87B42BBA8A7000ECA9A6 /* NoteListScreen.swift */,
+				237C87B62BBA9C6F00ECA9A6 /* HideableSearchTextField.swift */,
+				237C87B82BBAA32400ECA9A6 /* NoteItem.swift */,
 			);
 			path = note_list;
+			sourceTree = "<group>";
+		};
+		237C87BC2BBACC9800ECA9A6 /* note_detail */ = {
+			isa = PBXGroup;
+			children = (
+				237C87BD2BBACCB300ECA9A6 /* NoteDetailScreen.swift */,
+			);
+			path = note_detail;
 			sourceTree = "<group>";
 		};
 		7555FF72242A565900829871 = {
@@ -87,12 +105,14 @@
 		7555FF7D242A565900829871 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				237C87BC2BBACC9800ECA9A6 /* note_detail */,
 				237C87B12BBA89FB00ECA9A6 /* note_list */,
 				058557BA273AAA24004C7B11 /* Assets.xcassets */,
 				7555FF82242A565900829871 /* ContentView.swift */,
 				7555FF8C242A565B00829871 /* Info.plist */,
 				2152FB032600AC8F00CF470E /* iOSApp.swift */,
 				058557D7273AAEEB004C7B11 /* Preview Content */,
+				237C87BA2BBAA93900ECA9A6 /* Colors.swift */,
 			);
 			path = iosApp;
 			sourceTree = "<group>";
@@ -196,10 +216,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237C87B92BBAA32400ECA9A6 /* NoteItem.swift in Sources */,
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				237C87BE2BBACCB300ECA9A6 /* NoteDetailScreen.swift in Sources */,
 				237C87B52BBA8A7000ECA9A6 /* NoteListScreen.swift in Sources */,
+				237C87BB2BBAA93900ECA9A6 /* Colors.swift in Sources */,
 				7555FF83242A565900829871 /* ContentView.swift in Sources */,
 				237C87B32BBA8A1800ECA9A6 /* NoteListViewModel.swift in Sources */,
+				237C87B72BBA9C6F00ECA9A6 /* HideableSearchTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

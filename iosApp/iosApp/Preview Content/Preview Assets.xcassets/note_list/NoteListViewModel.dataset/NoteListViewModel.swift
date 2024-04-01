@@ -33,15 +33,14 @@ extension NoteListScreen {
             self.noteDataSource = noteDataSource
         }
         
-        func setNoteDataSource(noteDataSource : NoteDataSource){
-            self.noteDataSource = noteDataSource
-        }
        
         func loadNotes() {
+              
             noteDataSource?.getAllNotes(completionHandler: { notes, error in
                 self.notes = notes ?? []
                 self.filteredNotes = notes ?? []
             })
+            
         }
         
         func deleteNoteById(id : Int64?){
